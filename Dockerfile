@@ -1,21 +1,21 @@
-# Use the Node.js 20.13.1 base image
-FROM node:20.13.1
+# Use the Node.js 20.18.1 base image
+FROM node:lts
 
 # Set the working directory inside the container
 WORKDIR /src
 
 # Copy package files and install dependencies
 COPY package*.json ./
-RUN yarn install
+RUN npm install
 
 # Copy the entire application code
 COPY . .
 
 # Build the application
-RUN yarn build
+RUN npm run build
 
 # Expose the port your app runs on
 EXPOSE 3000
 
 # Command to start the application
-CMD ["yarn", "start"]
+CMD ["npm", "run", "start"]

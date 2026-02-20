@@ -5,3 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/src
+      - /src/node_modules

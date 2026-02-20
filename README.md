@@ -1,91 +1,126 @@
-# Magic Portfolio
+# Arshad Arshadli
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+**Backend Developer**
 
-View the demo [here](https://demo.magic-portfolio.com).
+## Contact Information
 
-![Magic Portfolio](public/images/og/home.jpg)
+* 📧 **Email:** [arshad.arshadli02@gmail.com](mailto:arshad.arshadli02@gmail.com) | [work@arshadli.me](mailto:work@arshadli.me)
+* 📱 **Phone:** +994 55 656 03 07
+* 📍 **Location:** Baku, Azerbaijan
+* 🔗 **Profiles:** [LinkedIn](https://linkedin.com/in/arshadarshadli) | [GitHub](https://github.com/ArshadArshadli01) | GitLab
 
-## Getting started
+---
 
-**1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
+## Professional Summary
 
-**2. Install dependencies**
-```
-npm install
-```
+With 5 years of experience as a developer, including over 4 years specifically focused on backend development, I specialize in building RESTful microservices, integrating payment gateways, and optimizing databases. I have hands-on experience with Java/Spring Boot, Redis caching, Docker/Kubernetes, and Linux/VPS environments. I am a responsible, attentive professional who is open to innovations and resilient in handling complex challenges.
 
-**3. Run dev server**
-```
-npm run dev
-```
+---
 
-**4. Edit config**
-```
-src/resources/once-ui.config.js
-```
+## Work Experience
 
-**5. Edit content**
-```
-src/resources/content.js
-```
+### 🏢 Middle Backend Developer
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
+**Greenpay MMC** | Baku, Azerbaijan | *11/2024 – Present*
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+* Developed and maintained RESTful microservices using Spring Boot and Hibernate, while participating in production monitoring and incident resolution.
+* Implemented Redis Cache to increase performance and optimize response times for frequently accessed data.
+* Set up an email OTP notification system, ensuring OTPs are securely stored in Redis.
+* Applied Redis Queue for asynchronous email dispatching to establish a stable flow under high server loads.
+* Designed an image upload service utilizing MinIO and S3 buckets, alongside an e-commerce payment BFF (Backend for Frontend).
+* Configured Telegram notifications to track pending payments.
+* Integrated multiple payment providers to ensure smooth, secure, and stable financial transactions.
+* Managed secure secret configurations across services by successfully integrating Vault.
+* Designed and optimized relational databases, improving query efficiency for MySQL and PostgreSQL.
+* Deployed and orchestrated services using Git, Linux, Docker, Kubernetes, and VPS.
+* Contributed to frontend development using Vue.js, Nuxt.js, JavaScript, and Bootstrap.
+* Worked on legacy service integration using PHP, Laravel (MVC), and ORM systems.
 
-## Documentation
+---
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+### 🏢 Backend Developer
 
-## Features
+**ABB & ABB Innovation** | Baku, Azerbaijan | *06/2024 – 08/2024*
 
-### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
+* **Mortgage Operation Project:** Migrated legacy SOAP-based services to modern RESTful endpoints by building an adapter with Spring Boot and OpenFeign, transforming XML into JSON using Jackson and JAXB.
+* Developed a REST API to receive customer requests and map them accurately to the appropriate ABB microservices.
+* Created dynamic request templates (e.g., collateral-info.xml, close.xml, modify.xml) to interact flexibly with SOAP services.
+* Utilized MapStruct for clean object mapping between XML responses and domain models to reduce boilerplate.
+* Documented APIs with Swagger/OpenAPI and used Microcks to simulate and test API performance.
+* Followed Agile methodology using Jira for sprint planning and task tracking.
+* **Job Portal Project:** Designed a file upload microservice using Spring Boot and S3-compatible MinIO.
+* Integrated the upload service with other systems via REST APIs and message-driven communication (e.g., Kafka or RabbitMQ).
+* Implemented robust error handling, retry mechanisms, and metadata tracking (name, size, format, upload status).
+* Configured public and private access using MinIO's APIs, writing unit/integration tests to guarantee reliability.
 
-### SEO
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+---
 
-### Design
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+### 🏢 Full Stack Developer
 
-### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+**Alfasoft MMC** | Baku, Azerbaijan | *10/2023 – 10/2024*
 
-### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+* Led full-stack development to build scalable and high-performance web applications.
+* Designed and consumed RESTful APIs with an emphasis on speed and clean architecture.
+* Executed payment gateway integrations to facilitate secure and reliable transactions.
+* Utilized Java Spring Boot, Hibernate, PHP (Laravel), and Vue.js/Nuxt.js across both frontend and backend tasks.
+* Deployed containerized applications using Docker on Linux and VPS production environments.
+* Integrated Redis Cache to optimize system resource usage and speed up data access.
+* Administered and optimized MySQL and PostgreSQL databases.
+* Ensured mobile-first, responsive interface designs using HTML5, CSS3, Sass, Bootstrap, and jQuery.
+* Utilized Git for version control and collaborated effectively in a team-based workflow.
 
-## Creators
+---
 
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
+### 🏢 Full Stack Developer
 
-## Get involved
+**Digital Silk Road MMC** | Baku, Azerbaijan | *11/2020 – 11/2023*
 
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
+* Contributed to full-stack web projects utilizing Java Spring Boot, PHP (Laravel), and Vue.js/Nuxt.js.
+* Developed RESTful APIs to enhance data exchange between frontend and backend services.
+* Managed data flows and optimized structures using MySQL and PhpMyAdmin.
+* Deployed websites to Linux VPS environments, gaining hands-on experience with server troubleshooting and maintenance.
+* Tracked bugs via GitHub and collaborated efficiently in an Agile framework with weekly stand-ups.
+* Maintained responsive, accessible UIs using HTML5, SASS, JavaScript, and Git.
 
-## License
+---
 
-Distributed under the CC BY-NC 4.0 License.
-- Attribution is required.
-- Commercial usage is not allowed.
-- You can extend the license to [Dopler CC](https://dopler.app/license) by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
+## Technical Skills
 
-See `LICENSE.txt` for more information.
+| Category | Technologies |
+|---|---|
+| **Languages & Frameworks** | Java SE, Java EE, Spring Framework, Spring Boot, Hibernate, JSP, Servlet, Thymeleaf, JPA, JDBC, PHP, Laravel |
+| **Databases & Caching** | PostgreSQL, MySQL, MS SQL Server, Oracle, MongoDB, Redis, Liquibase, Flyway |
+| **DevOps & Cloud** | Docker, Kubernetes, Linux, VPS, AWS S3, MinIO, DigitalOcean, Heroku |
+| **Tools & Architecture** | Git, GitHub, GitLab, Postman, Swagger, Kibana, Grafana, ELK Stack (Elasticsearch), Vault |
+| **Concepts** | OOP, SOLID Principles, Design Patterns, RESTful APIs, Microservices, Agile Methodology |
 
-## Deploy with Vercel
+---
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+## Education & Certifications
+
+🎓 **Backend-6 (Java) Honors — Technest** | ABB Tech Academy
+> *01/2024 – 06/2024* | Baku, Azerbaijan
+> *Graduated with Distinction (Fərqlənmə)*
+
+🎓 **Master's in System Programming** | Azerbaijan Technical University
+> *09/2021 – 06/2023* | Baku, Azerbaijan
+
+🎓 **Bachelor's in Computer Engineering** | Baku Engineering University
+> *09/2017 – 06/2021* | Baku, Azerbaijan
+
+---
+
+## Soft Skills & Interests
+
+* **Soft Skills:** Project Management, Teamwork, Effective Communication
+* **Interests:** Learning new software and tools, Playing video games
+
+---
+
+## Languages
+
+| Language | Proficiency |
+|---|---|
+| 🇦🇿 Azerbaijani | Native / Bilingual Proficiency (C2) |
+| 🇬🇧 English | Professional Working Proficiency (B1 Intermediate) |
+| 🇹🇷 Turkish | Professional Working Proficiency (B2 Upper-Intermediate) |

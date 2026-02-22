@@ -106,7 +106,7 @@ export default async function RootLayout({
         <link rel="icon" href="/icon0.svg" type="image/svg+xml" />
         <link rel="icon" href="/icon1.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        {/* <link rel="manifest" href="/manifest.json" /> */}
         <meta name="theme-color" content="#17161b" />
       </head>
       <Providers>

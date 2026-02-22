@@ -108,15 +108,7 @@ export default function Home() {
               <Icon onBackground="accent-weak" name="globe" />
               Baku, Azerbaijan
             </Row>
-            {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Row>
-            )}
+
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>

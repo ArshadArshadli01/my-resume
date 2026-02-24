@@ -28,6 +28,8 @@ export type Social = Array<{
   icon: IconName;
   link: string;
   essential?: boolean;
+  show_pdf: boolean;
+  show_site: boolean;
 }>;
 
 /**
@@ -72,11 +74,15 @@ export interface About extends BasePageConfig {
   };
   intro: {
     display: boolean;
+    show_pdf: boolean;
+    show_site: boolean;
     title: string;
     description: React.ReactNode;
   };
   work: {
     display: boolean;
+    show_pdf: boolean;
+    show_site: boolean;
     title: string;
     experiences: Array<{
       company: string;
@@ -93,6 +99,8 @@ export interface About extends BasePageConfig {
   };
   studies: {
     display: boolean;
+    show_pdf: boolean;
+    show_site: boolean;
     title: string;
     institutions: Array<{
       name: string;
@@ -101,6 +109,8 @@ export interface About extends BasePageConfig {
   };
   technical: {
     display: boolean;
+    show_pdf: boolean;
+    show_site: boolean;
     title: string;
     skills: Array<{
       title: string;
@@ -119,6 +129,8 @@ export interface About extends BasePageConfig {
   };
   languages: {
     display: boolean;
+    show_pdf: boolean;
+    show_site: boolean;
     title: string;
     items: Array<{
       name: string;
@@ -127,6 +139,8 @@ export interface About extends BasePageConfig {
   };
   softSkills: {
     display: boolean;
+    show_pdf: boolean;
+    show_site: boolean;
     title: string;
     skills: string[];
     interests: string[];

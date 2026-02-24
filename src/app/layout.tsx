@@ -56,17 +56,17 @@ export default async function RootLayout({
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
-              brand: style.brand,
-              accent: style.accent,
-              neutral: style.neutral,
-              solid: style.solid,
-              "solid-style": style.solidStyle,
-              border: style.border,
-              surface: style.surface,
-              transition: style.transition,
-              scaling: style.scaling,
-              "viz-style": dataStyle.variant,
-            })};
+                    brand: style.brand,
+                    accent: style.accent,
+                    neutral: style.neutral,
+                    solid: style.solid,
+                    "solid-style": style.solidStyle,
+                    border: style.border,
+                    surface: style.surface,
+                    transition: style.transition,
+                    scaling: style.scaling,
+                    "viz-style": dataStyle.variant,
+                  })};
                   
                   // Apply default values
                   Object.entries(config).forEach(([key, value]) => {
@@ -106,8 +106,8 @@ export default async function RootLayout({
         <link rel="icon" href="/icon0.svg" type="image/svg+xml" />
         <link rel="icon" href="/icon1.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
-        {/* <link rel="manifest" href="/manifest.json" /> */}
-        <meta name="theme-color" content="#17161b" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="theme-color" content={process.env.NEXT_PUBLIC_THEME_COLOR ?? "#17161b"} />
       </head>
       <Providers>
         <Column

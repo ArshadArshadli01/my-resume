@@ -130,9 +130,10 @@ const effects: EffectsConfig = {
 const schema: SchemaConfig = {
   logo: "",
   type: "Person",
-  name: process.env.NEXT_PUBLIC_FIRST_NAME && process.env.NEXT_PUBLIC_LAST_NAME
-    ? `${process.env.NEXT_PUBLIC_FIRST_NAME} ${process.env.NEXT_PUBLIC_LAST_NAME}`
-    : "Arshad Arshadli",
+  name:
+    process.env.NEXT_PUBLIC_FIRST_NAME && process.env.NEXT_PUBLIC_LAST_NAME
+      ? `${process.env.NEXT_PUBLIC_FIRST_NAME} ${process.env.NEXT_PUBLIC_LAST_NAME}`
+      : "Arshad Arshadli",
   description: home.description,
   email: process.env.NEXT_PUBLIC_EMAIL || "arshad.arshadli02@gmail.com",
 };
@@ -143,14 +144,4 @@ const sameAs: SameAsConfig = {
   github: process.env.NEXT_PUBLIC_GITHUB || "https://github.com/ArshadArshadli01",
 };
 
-export {
-  display,
-  routes,
-  baseURL,
-  fonts,
-  style,
-  schema,
-  sameAs,
-  effects,
-  dataStyle,
-};
+export { display, routes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };

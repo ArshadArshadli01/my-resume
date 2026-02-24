@@ -35,6 +35,11 @@ export default function Home() {
       items: [],
     },
     {
+      title: about.technical.title,
+      display: about.technical.display,
+      items: about.technical.skills.map((skill) => skill.title),
+    },
+    {
       title: about.work.title,
       display: about.work.display,
       items: about.work.experiences.map((experience) => experience.company),
@@ -45,19 +50,14 @@ export default function Home() {
       items: about.studies.institutions.map((institution) => institution.name),
     },
     {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
+      title: about.languages.title,
+      display: about.languages.display,
+      items: about.languages.items.map((lang) => lang.name),
     },
     {
       title: about.softSkills.title,
       display: about.softSkills.display,
       items: [],
-    },
-    {
-      title: about.languages.title,
-      display: about.languages.display,
-      items: about.languages.items.map((lang) => lang.name),
     },
   ];
   return (
@@ -108,7 +108,6 @@ export default function Home() {
               <Icon onBackground="accent-weak" name="globe" />
               Baku, Azerbaijan
             </Row>
-
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
@@ -147,13 +146,15 @@ export default function Home() {
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
-            >
-              {person.role}
-            </Text>
+            {person.role && (
+              <Text
+                className={styles.textAlign}
+                variant="display-default-xs"
+                onBackground="neutral-weak"
+              >
+                {person.role}
+              </Text>
+            )}
             {social.length > 0 && (
               <Row
                 className={styles.blockAlign}
@@ -166,7 +167,7 @@ export default function Home() {
                 data-border="rounded"
               >
                 {social
-                  .filter((item) => item.essential)
+                  .filter((item) => item.essential && item.show_site)
                   .map(
                     (item) =>
                       item.link && (
@@ -198,13 +199,68 @@ export default function Home() {
             )}
           </Column>
 
-          {about.intro.display && (
+          {about.intro.display && about.intro.show_site && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
               {about.intro.description}
             </Column>
           )}
 
-          {about.work.display && (
+          {about.technical.display && about.technical.show_site && (
+            <>
+              <Heading
+                as="h2"
+                id={about.technical.title}
+                variant="display-strong-s"
+                marginBottom="40"
+              >
+                {about.technical.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.technical.skills.map((skill, index) => (
+                  <Column key={`${skill}-${index}`} fillWidth gap="4">
+                    <Text id={skill.title} variant="heading-strong-l">
+                      {skill.title}
+                    </Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {skill.description}
+                    </Text>
+                    {skill.tags && skill.tags.length > 0 && (
+                      <Row wrap gap="8" paddingTop="8">
+                        {skill.tags.map((tag, tagIndex) => (
+                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
+                            {tag.name}
+                          </Tag>
+                        ))}
+                      </Row>
+                    )}
+                    {skill.images && skill.images.length > 0 && (
+                      <Row fillWidth paddingTop="m" gap="12" wrap>
+                        {skill.images.map((image, index) => (
+                          <Row
+                            key={index}
+                            border="neutral-medium"
+                            radius="m"
+                            minWidth={image.width}
+                            height={image.height}
+                          >
+                            <Media
+                              enlarge
+                              radius="m"
+                              sizes={image.width.toString()}
+                              alt={image.alt}
+                              src={image.src}
+                            />
+                          </Row>
+                        ))}
+                      </Row>
+                    )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.work.display && about.work.show_site && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
                 {about.work.title}
@@ -263,7 +319,7 @@ export default function Home() {
             </>
           )}
 
-          {about.studies.display && (
+          {about.studies.display && about.studies.show_site && (
             <>
               <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
                 {about.studies.title}
@@ -283,62 +339,33 @@ export default function Home() {
             </>
           )}
 
-          {about.technical.display && (
+          {about.languages.display && about.languages.show_site && (
             <>
               <Heading
                 as="h2"
-                id={about.technical.title}
+                id={about.languages.title}
                 variant="display-strong-s"
-                marginBottom="40"
+                marginBottom="m"
+                marginTop="40"
               >
-                {about.technical.title}
+                {about.languages.title}
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">
-                      {skill.title}
+                {about.languages.items.map((lang, index) => (
+                  <Column key={`${lang.name}-${index}`} fillWidth gap="4">
+                    <Text id={lang.name} variant="heading-strong-l">
+                      {lang.name}
                     </Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
+                      {lang.proficiency}
                     </Text>
-                    {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="8">
-                        {skill.tags.map((tag, tagIndex) => (
-                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
-                            {tag.name}
-                          </Tag>
-                        ))}
-                      </Row>
-                    )}
-                    {skill.images && skill.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
                   </Column>
                 ))}
               </Column>
             </>
           )}
 
-          {about.softSkills.display && (
+          {about.softSkills.display && about.softSkills.show_site && (
             <>
               <Heading
                 as="h2"
@@ -370,32 +397,6 @@ export default function Home() {
                     ))}
                   </Row>
                 </Column>
-              </Column>
-            </>
-          )}
-
-          {about.languages.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.languages.title}
-                variant="display-strong-s"
-                marginBottom="m"
-                marginTop="40"
-              >
-                {about.languages.title}
-              </Heading>
-              <Column fillWidth gap="l">
-                {about.languages.items.map((lang, index) => (
-                  <Column key={`${lang.name}-${index}`} fillWidth gap="4">
-                    <Text id={lang.name} variant="heading-strong-l">
-                      {lang.name}
-                    </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {lang.proficiency}
-                    </Text>
-                  </Column>
-                ))}
               </Column>
             </>
           )}

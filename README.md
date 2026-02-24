@@ -1,115 +1,198 @@
-# Arshad Arshadli
+# 📄 My Resume — Portfolio & PDF Generator
 
-**Backend Developer**
-
-## Contact Information
-
-* 📧 **Email:** [arshad.arshadli02@gmail.com](mailto:arshad.arshadli02@gmail.com) | [work@arshadli.me](mailto:work@arshadli.me)
-* 📱 **Phone:** +994 55 656 03 07
-* 📍 **Location:** Baku, Azerbaijan
-* 🔗 **Profiles:** [LinkedIn](https://linkedin.com/in/arshadarshadli) | [GitHub](https://github.com/ArshadArshadli01) | GitLab
+A modern, one-page portfolio website with a built-in PDF resume generator, JSON upload editor, and PWA support. Built with **Next.js 16**, **React 19**, **Once UI**, and **@react-pdf/renderer**.
 
 ---
 
-## Professional Summary
+## ✨ Features
 
-Backend Developer with 5 years of software development experience, including 4+ years specializing in backend architecture. Proven expertise in building scalable RESTful microservices, optimizing databases, and integrating complex payment gateways. Proficient in Java/Spring Boot, Redis, Docker/Kubernetes, and Linux/VPS environments. Adaptable and detail-oriented professional driven to solve complex technical challenges.
-
----
-
-## Work Experience
-
-### 🏢 Middle Backend Developer
-
-**Greenpay MMC** | Baku, Azerbaijan | *11/2024 – Present*
-
-* Developed and maintained RESTful microservices using Spring Boot and Hibernate; actively participated in production monitoring and incident resolution.
-* Implemented Redis Cache to significantly optimize response times and enhance performance for frequently accessed data.
-* Set up a secure email OTP notification system utilizing Redis-based storage.
-* Applied Redis Queue for asynchronous email dispatching, ensuring system stability under high server loads.
-* Designed an image upload service using MinIO and S3 buckets, alongside an e-commerce payment BFF (Backend for Frontend).
-* Configured Telegram notifications for real-time tracking of pending payments.
-* Integrated multiple payment providers to ensure smooth, secure, and reliable financial transactions.
-* Managed secure secret configurations across microservices by successfully integrating HashiCorp Vault.
-* Designed and optimized MySQL and PostgreSQL databases to improve overall query efficiency.
-* Deployed and orchestrated services across Git, Linux, Docker, Kubernetes, and VPS environments.
-* Contributed to frontend development utilizing Vue.js, Nuxt.js, JavaScript, and Bootstrap.
-* Maintained and integrated legacy services using PHP, Laravel (MVC), and ORM systems.
+- **Portfolio Website** — Personal landing page driven by `resume-site-data.json`
+- **PDF Resume** — Auto-generated at `/resume` via `@react-pdf/renderer`
+- **PDF Generator** — Upload `resume-pdf-data.json` at `/upload`, toggle sections, and generate a PDF in a new tab at `/resume/generate`
+- **Dynamic Manifest** — PWA manifest generated from `.env` at build time
+- **Dark Mode** — System / manual toggle via Once UI
+- **Docker Ready** — Standalone output with Dockerfile included
 
 ---
 
-### 🏢 Backend Developer
+## 🚀 Quick Start (0 → Running)
 
-**ABB & ABB Innovation** | Baku, Azerbaijan | *06/2024 – 08/2024*
+### Prerequisites
 
-**Mortgage Operation Project:**
-* Migrated legacy SOAP-based services to modern RESTful endpoints using Spring Boot and OpenFeign, transforming XML into JSON via Jackson and JAXB.
-* Developed a routing REST API to accurately receive and map customer requests to the appropriate ABB microservices.
-* Created dynamic request templates (e.g., collateral-info.xml, close.xml) for flexible interaction with SOAP services.
-* Utilized MapStruct for clean, boilerplate-free object mapping between XML responses and domain models.
-* Documented APIs with Swagger/OpenAPI and simulated API performance using Microcks.
-* Collaborated within an Agile framework, utilizing Jira for sprint planning and task tracking.
+| Tool | Version |
+|------|---------|
+| **Node.js** | 20.17+ |
+| **npm** | 10+ |
 
-**Job Portal Project:**
-* Designed a scalable file upload microservice utilizing Spring Boot and S3-compatible MinIO.
-* Integrated the upload service with external systems via REST APIs and message-driven communication (Kafka/RabbitMQ).
-* Implemented robust error handling, retry mechanisms, and metadata tracking (name, size, format, upload status).
-* Configured public and private access via MinIO's APIs, ensuring reliability through comprehensive unit and integration testing.
+### 1. Clone the repo
 
----
+```bash
+git clone https://github.com/ArshadArshadli01/my-resume.git
+cd my-resume
+```
 
-### 🏢 Full Stack Developer
+### 2. Install dependencies
 
-**Alfasoft MMC** | Baku, Azerbaijan | *10/2023 – 10/2024*
+```bash
+npm install
+```
 
-* Led full-stack development efforts to build scalable, high-performance web applications.
-* Designed and consumed cleanly architected RESTful APIs with an emphasis on speed.
-* Executed secure and reliable payment gateway integrations to facilitate seamless transactions.
-* Utilized Java Spring Boot, Hibernate, PHP (Laravel), and Vue.js/Nuxt.js for comprehensive backend and frontend tasks.
-* Deployed containerized applications via Docker on Linux and VPS production environments.
-* Integrated Redis Cache to optimize system resource utilization and accelerate data access.
-* Administered and optimized MySQL and PostgreSQL databases.
-* Ensured mobile-first, responsive UI designs utilizing HTML5, CSS3, Sass, Bootstrap, and jQuery.
-* Collaborated effectively in a team-based workflow using Git for version control.
+### 3. Configure environment
 
----
+Copy the example and adjust values:
 
-### 🏢 Full Stack Developer
+```bash
+cp .env.example .env
+```
 
-**Digital Silk Road MMC** | Baku, Azerbaijan | *11/2020 – 11/2023*
+Or create `.env` manually — see [Environment Variables](#-environment-variables) below.
 
-* Contributed to full-stack web projects utilizing Java Spring Boot, PHP (Laravel), and Vue.js/Nuxt.js.
-* Developed RESTful APIs to streamline data exchange between frontend and backend architectures.
-* Managed data flows and optimized database structures using MySQL and PhpMyAdmin.
-* Deployed applications to Linux VPS environments, performing regular server troubleshooting and maintenance.
-* Tracked bugs via GitHub and collaborated efficiently within an Agile framework, participating in weekly stand-ups.
-* Maintained responsive and accessible user interfaces utilizing HTML5, SASS, JavaScript, and Git.
+### 4. Run development server
+
+```bash
+npm run dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## Technical Skills
+## 🏗️ Production Build
 
-| Category | Technologies |
-|---|---|
-| **Languages & Frameworks** | Java (SE/EE), Spring (Boot, Framework), Hibernate, JPA, PHP, Laravel |
-| **Databases & Caching** | PostgreSQL, MySQL, Oracle, MongoDB, Redis, Liquibase, Flyway |
-| **DevOps & Cloud** | Docker, Kubernetes, Linux, AWS S3, MinIO, VPS (DigitalOcean, Heroku) |
-| **Architecture & Tools** | RESTful APIs, Microservices, OOP, SOLID, Git, Postman, Swagger, ELK Stack, Grafana, Vault |
+### Option A — Static / Node.js
 
----
+```bash
+npm run build
+npm start
+```
 
-## Education & Certifications
+### Option B — Docker
 
-🎓 **Backend-6 (Java) Honors** | ABB Tech Academy | Baku (01/2024 – 06/2024) – Graduated with Distinction.
+```bash
+docker compose up -d --build
+```
 
-🎓 **M.S. in System Programming** | Azerbaijan Technical University | Baku (09/2021 – 06/2023)
-
-🎓 **B.S. in Computer Engineering** | Baku Engineering University | Baku (09/2017 – 06/2021)
+The included `Dockerfile` uses Next.js standalone output. The `docker-compose.yaml` maps port **3000**.
 
 ---
 
-## Additional Information
+## 📂 Project Structure
 
-**Languages:** Azerbaijani (Native), English (B1 Intermediate), Turkish (B2 Upper-Intermediate).
+```
+my-resume/
+├── public/                    # Static assets (icons, images, sample JSON)
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── page.tsx           # Home / About page
+│   │   ├── manifest.ts        # Dynamic PWA manifest (from .env)
+│   │   ├── resume/
+│   │   │   ├── page.tsx       # PDF resume (from static resume-pdf-data.json)
+│   │   │   └── generate/
+│   │   │       └── page.tsx   # PDF generator (from uploaded JSON via sessionStorage)
+│   │   ├── upload/
+│   │   │   └── page.tsx       # JSON upload editor + PDF generator
+│   │   └── api/               # API routes (OG image generation)
+│   ├── components/
+│   │   ├── pdf/               # @react-pdf/renderer components
+│   │   │   └── resume/        # Heading, Section, Experience, Education, etc.
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   ├── resources/
+│   │   ├── resume-site-data.json  # ✏️ Website data source
+│   │   ├── resume-pdf-data.json   # ✏️ PDF data source
+│   │   ├── content.tsx            # Maps site JSON → typed content
+│   │   ├── once-ui.config.ts      # UI theme & effects
+│   │   └── icons.ts               # Icon registry
+│   └── types/                 # TypeScript type definitions
+├── .env                       # Environment variables
+├── .env.example               # Template for .env
+├── Dockerfile                 # Production Docker image
+├── docker-compose.yaml
+└── package.json
+```
 
-**Soft Skills & Interests:** Agile Project Management, Teamwork, Exploring new technologies, Self-hosting, Gaming.
+---
+
+## 📑 Data Files
+
+The resume data is split into two purpose-specific JSON files:
+
+| File | Used By | Purpose |
+|------|---------|---------|
+| `resume-site-data.json` | Website (`/`) | Controls all content on the portfolio page. Each section has a `show` flag. |
+| `resume-pdf-data.json` | PDF (`/resume`) & Upload (`/upload`) | Flat structure matching the PDF renderer. Each section has a `show` flag. The `person.avatar` field accepts a URL. |
+
+### Editing Your Resume
+
+1. **Website** — Edit `src/resources/resume-site-data.json`
+2. **PDF** — Edit `src/resources/resume-pdf-data.json`
+3. **Via UI** — Go to `/upload`, download the **sample JSON** for reference, upload your JSON, toggle sections on/off, then:
+   - Click **🚀 Generate PDF** to open the PDF in a new tab
+   - Click **⬇ Download JSON** to save your modified JSON
+
+---
+
+## 🔧 Environment Variables
+
+All public variables are prefixed with `NEXT_PUBLIC_` and are safe to embed in client bundles.
+
+### Personal Info
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `NEXT_PUBLIC_FIRST_NAME` | `Arshad` | First name |
+| `NEXT_PUBLIC_LAST_NAME` | `Arshadli` | Last name |
+| `NEXT_PUBLIC_ROLE` | `Backend Developer` | Job title |
+| `NEXT_PUBLIC_LOCATION` | `Baku, Azerbaijan` | Location |
+| `NEXT_PUBLIC_TIMEZONE` | `Asia/Baku` | IANA timezone |
+| `NEXT_PUBLIC_EMAIL` | `arshad.arshadli02@gmail.com` | Primary email |
+| `NEXT_PUBLIC_EMAIL_WORK` | `work@arshadli.me` | Work email |
+| `NEXT_PUBLIC_PHONE` | `+994 55 656 03 07` | Phone |
+
+### Social Links
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_GITHUB` | GitHub profile URL |
+| `NEXT_PUBLIC_LINKEDIN` | LinkedIn profile URL |
+
+### Site & PWA
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `NEXT_PUBLIC_BASE_URL` | `https://arshadli.me` | Canonical base URL |
+| `NEXT_PUBLIC_SITE_TITLE` | `Arshad Arshadli Portfolio` | `<title>` tag |
+| `NEXT_PUBLIC_THEME_COLOR` | `#17161b` | PWA theme + bg color |
+| `NEXT_PUBLIC_MANIFEST_NAME` | `Arshad Arshadli CV` | PWA manifest `name` |
+| `NEXT_PUBLIC_MANIFEST_SHORT_NAME` | `AA CV` | PWA manifest `short_name` |
+| `NEXT_PUBLIC_MANIFEST_DISPLAY` | `standalone` | PWA display mode |
+
+---
+
+## 🧭 Routes
+
+| Route | Description |
+|-------|-------------|
+| `/` | Portfolio home page |
+| `/resume` | PDF resume viewer (static, from `resume-pdf-data.json`) |
+| `/upload` | Upload JSON → preview sections → generate PDF |
+| `/resume/generate` | PDF viewer for uploaded data (reads from `sessionStorage`) |
+
+---
+
+## 🧰 Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm start` | Start production server |
+| `npm run biome-write` | Format code with Biome |
+| `npm run lint` | Run ESLint |
+
+---
+
+## 📄 License
+
+MIT — see [LICENSE](./LICENSE).

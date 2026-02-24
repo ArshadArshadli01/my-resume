@@ -51,7 +51,7 @@
             {
                 "company": "Greenpay MMC",
                 "role": "Middle Backend Developer",
-                "timeframe": "11/2024 - Present",
+                "timeframe": "11/2024 - 11/2025",
                 "achievements": [
                     "Developed and maintained RESTful microservices using Spring Boot and Hibernate; actively participated in production monitoring and incident resolution.",
                     "Implemented Redis Cache to significantly optimize response times and enhance performance for frequently accessed data.",

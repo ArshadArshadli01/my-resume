@@ -11,7 +11,9 @@ const resumeData: ResumeData = {
     email: pdfJson.person.email,
     location: pdfJson.person.location,
     avatar: pdfJson.person.avatar
-      ? `${typeof window !== "undefined" ? window.location.origin : "http://localhost:3000"}${pdfJson.person.avatar}`
+      ? pdfJson.person.avatar.startsWith("http")
+        ? pdfJson.person.avatar
+        : `${typeof window !== "undefined" ? window.location.origin : "http://localhost:3000"}${pdfJson.person.avatar}`
       : undefined,
   },
   social: pdfJson.social,

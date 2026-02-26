@@ -15,6 +15,16 @@ A modern, one-page portfolio website with a built-in PDF resume generator, JSON 
 
 ---
 
+## 📸 Preview
+
+### Resume First Page
+![First Page](./readme-docs/first-page.jpg)
+
+### Resume Second Page
+![Second Page](./readme-docs/second-page.jpg)
+
+---
+
 ## 🚀 Quick Start (0 → Running)
 
 ### Prerequisites

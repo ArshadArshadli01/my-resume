@@ -6,36 +6,37 @@ import { Experience } from "./experience";
 import { Education } from "./education";
 import { Skill } from "./skill";
 import { Language } from "./language";
-import { Watermark } from "./watermark";
 
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 48,
-    paddingHorizontal: 50,
+    paddingTop: 30, // Reduced from 40
+    paddingHorizontal: 35, // Reduced from 40
     fontFamily: "Ubuntu",
     fontSize: 10,
-    paddingBottom: 36,
+    paddingBottom: 30,
   },
-  twoColumn: {
+  twoColumnContainer: {
     flexDirection: "row",
+    marginTop: 10,
   },
-  left: {
-    flexGrow: 1,
-    marginRight: 16,
-    width: "50%",
+  leftColumn: {
+    width: "65%", // Slightly wider left column
+    paddingRight: 15,
   },
-  right: {
-    flexGrow: 1,
-    width: "45%",
+  rightColumn: {
+    width: "35%", // Slightly narrower right column
+    paddingLeft: 15,
+    borderLeftWidth: 0,
+    borderLeftColor: "#e2e8f0",
   },
   pageNumber: {
     position: "absolute",
-    fontSize: 12,
-    bottom: 24,
+    fontSize: 9, // Smaller page number
+    bottom: 20,
     left: 0,
     right: 35,
     textAlign: "right",
-    color: "#64748b",
+    color: "#94a3b8",
   },
 });
 
@@ -50,6 +51,7 @@ export type ResumeData = {
     role: string;
     email: string;
     location: string;
+    phone?: string;
     avatar?: string;
   };
   social: {
@@ -101,78 +103,86 @@ export const ResumeDocument: React.FC<ResumeDocumentProps> = ({ resume }) => {
       title={`Resume — ${resume.person.name}, ${new Date().getFullYear()}`}
     >
       <Page size="A4" style={styles.page}>
-        <Watermark />
-
         <Heading
           name={resume.person.name}
           role={resume.person.role}
           email={resume.person.email}
           location={resume.person.location}
+          phone={resume.person.phone}
           avatar={resume.person.avatar}
           social={resume.social}
+          intro={resume.intro.show_pdf ? resume.intro.text : undefined}
         />
 
-        {resume.intro.show_pdf && (
-          <Section title="introduction">
-            <Text>{resume.intro.text}</Text>
-          </Section>
-        )}
-
-        {resume.skills.show_pdf && (
-          <Section title="technical skills">
-            {resume.skills.items.map((s) => (
-              <Skill key={s.title} title={s.title} description={s.description} />
-            ))}
-          </Section>
-        )}
-
-        {resume.work.show_pdf && (
-          <Section title="work experience">
-            {resume.work.items.map((w) => (
-              <Experience
-                key={`${w.company}-${w.timeframe}`}
-                company={w.company}
-                role={w.role}
-                timeframe={w.timeframe}
-                achievements={w.achievements}
-              />
-            ))}
-          </Section>
-        )}
-
-        {resume.education.show_pdf && (
-          <Section title="education & certifications">
-            {resume.education.items.map((e) => (
-              <Education key={e.name} name={e.name} description={e.description} />
-            ))}
-          </Section>
-        )}
-
-        {(resume.languages.show_pdf || resume.softSkills.show_pdf) && (
-          <View style={styles.twoColumn}>
-            {resume.languages.show_pdf && (
-              <View style={styles.left}>
-                <Section title="languages">
-                  {resume.languages.items.map((l) => (
-                    <Language key={l.name} name={l.name} proficiency={l.proficiency} />
-                  ))}
-                </Section>
-              </View>
+        <View style={styles.twoColumnContainer}>
+          {/* LEFT COLUMN: Experience & Education */}
+          <View style={styles.leftColumn}>
+            {resume.work.show_pdf && (
+              <Section title="WORK EXPERIENCE">
+                {resume.work.items.map((w) => (
+                  <Experience
+                    key={`${w.company}-${w.timeframe}`}
+                    company={w.company}
+                    role={w.role}
+                    timeframe={w.timeframe}
+                    achievements={w.achievements}
+                  />
+                ))}
+              </Section>
             )}
-            {resume.softSkills.show_pdf && resume.softSkills.items.length > 0 && (
-              <View style={resume.languages.show_pdf ? styles.right : styles.left}>
-                <Section title="soft skills & interests">
-                  <Text>{resume.softSkills.items.join(", ")}</Text>
-                </Section>
-              </View>
+
+            {resume.education.show_pdf && (
+              <Section title="EDUCATION">
+                {resume.education.items.map((e) => (
+                  <Education key={e.name} name={e.name} description={e.description} />
+                ))}
+              </Section>
             )}
           </View>
-        )}
+
+          {/* RIGHT COLUMN: Skills, Languages, Soft Skills */}
+          <View style={styles.rightColumn}>
+            {resume.skills.show_pdf && (
+              <Section title="SKILLS">
+                {resume.skills.items.map((s) => (
+                  <Skill key={s.title} title={s.title} description={s.description} />
+                ))}
+              </Section>
+            )}
+
+            {resume.languages.show_pdf && (
+              <Section title="LANGUAGES">
+                {resume.languages.items.map((l) => (
+                  <Language key={l.name} name={l.name} proficiency={l.proficiency} />
+                ))}
+              </Section>
+            )}
+
+            {resume.softSkills.show_pdf && resume.softSkills.items.length > 0 && (
+              <Section title="INTERESTS">
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 3, marginTop: 2 }}>
+                  {resume.softSkills.items.map((s) => (
+                    <View key={s} style={{
+                      paddingVertical: 2.5,
+                      paddingHorizontal: 6,
+                      borderWidth: 1,
+                      borderColor: "#cbd5e1",
+                      borderRadius: 3,
+                      marginBottom: 3
+                    }}>
+                      <Text style={{ fontSize: 8, color: "#475569" }}>{s}</Text>
+                    </View>
+                  ))}
+                </View>
+              </Section>
+            )}
+          </View>
+        </View>
 
         <Text
           fixed
           style={styles.pageNumber}
-          render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+          render={({ pageNumber, totalPages }) => `Page ${pageNumber} of ${totalPages}`}
         />
       </Page>
     </Document>

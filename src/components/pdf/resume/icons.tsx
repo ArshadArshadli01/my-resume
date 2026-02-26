@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
 });
 
-type IconName = "at" | "calendar" | "dot" | "link" | "location" | "globe";
+type IconName = "at" | "calendar" | "dot" | "link" | "location" | "globe" | "email" | "phone" | "linkedin" | "github";
 
 type IconMap = {
   [key in IconName]: React.FC<{ color: string }>;
@@ -55,6 +55,31 @@ const icons: IconMap = {
       <Path stroke={color} d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
       <Path stroke={color} d="M2 12h20" />
     </>
+  ),
+  email: ({ color }) => (
+    <>
+      <Path stroke={color} d="m3 7 9 6 9-6" />
+      <Path stroke={color} d="M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </>
+  ),
+  phone: ({ color }) => (
+    <>
+      <Circle fill={color} cx="12" cy="18" r="1" />
+      <Path stroke={color} d="M17 21a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2z" />
+    </>
+  ),
+  linkedin: ({ color }) => (
+    <>
+      <Path stroke={color} d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+      <Path stroke={color} d="M2 9h4v12H2z" />
+      <Circle stroke={color} cx="4" cy="4" r="2" />
+    </>
+  ),
+  github: ({ color }) => (
+    <Path
+      stroke={color}
+      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+    />
   ),
 };
 

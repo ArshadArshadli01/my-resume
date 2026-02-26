@@ -26,6 +26,7 @@ export default function GeneratePdfContent() {
                     role: json.person?.role ?? "",
                     email: json.person?.email ?? "",
                     location: json.person?.location ?? "",
+                    phone: json.person?.phone ?? "",
                     avatar: json.person?.avatar || undefined,
                 },
                 social: (json.social ?? []).map(

@@ -6,18 +6,15 @@ type SectionProps = React.PropsWithChildren & {
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom: 12,
+    paddingBottom: 8,
   },
   title: {
     textTransform: "uppercase",
     fontWeight: 700,
-    color: "#64748b",
-  },
-  separator: {
-    height: 2,
-    marginTop: 1,
-    marginBottom: 4,
-    backgroundColor: "#64748b",
+    fontSize: 9, // Smaller for better hierarchy
+    color: "#64748b", // Lighter slate for contrast
+    marginBottom: 6,
+    letterSpacing: 1.5,
   },
 });
 
@@ -25,7 +22,6 @@ export const Section: React.FC<SectionProps> = ({ title, children }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <View style={styles.separator} />
       {children}
     </View>
   );

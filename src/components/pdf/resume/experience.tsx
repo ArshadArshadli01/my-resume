@@ -1,35 +1,67 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { Icon, IconText } from "./icons";
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 10,
+  },
+  headerWrapper: {
+    paddingLeft: 0, // Reset padding after removing border
+    marginBottom: 4,
+  },
   title: {
-    fontSize: 14,
+    fontSize: 12, // Increased for clarity
     fontWeight: 700,
+    color: "#000000", // Deep black
   },
-  row: {
-    flexDirection: "row",
-  },
-  infoContainer: {
-    justifyContent: "space-between",
-    marginTop: 4,
-    alignItems: "center",
+  companyRow: {
+    flexDirection: "column",
+    marginTop: 2,
   },
   company: {
-    fontSize: 12,
-    fontWeight: 700,
-    color: "#7c3aed",
+    fontSize: 9, // Slightly smaller
+    fontWeight: 400,
+    color: "#475569",
+    marginTop: 1,
+  },
+  timeLocRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 2,
+  },
+  timeframe: {
+    fontSize: 8.5,
+    fontStyle: "italic",
+    color: "#4b908f", // Teal
+  },
+  achievementsHead: {
+    fontSize: 8.5,
+    fontStyle: "italic",
+    color: "#4b908f",
+    marginBottom: 3,
+    marginLeft: 18, // Indent to align with text
   },
   list: {
-    marginTop: 4,
+    marginTop: 0,
+    marginLeft: 18, // Indent list
   },
   listItem: {
     marginBottom: 2,
     flexDirection: "row",
     alignItems: "flex-start",
   },
+  bulletPoint: {
+    width: 3.5,
+    height: 3.5,
+    borderRadius: 3.5 / 2,
+    backgroundColor: "#4b908f", // Teal dots
+    marginTop: 2.5,
+    marginRight: 6,
+  },
   listText: {
-    marginLeft: 4,
+    fontSize: 8.5,
+    color: "#334155",
     flex: 1,
+    lineHeight: 1.3,
   },
 });
 
@@ -47,16 +79,20 @@ export const Experience: React.FC<ExperienceProps> = ({
   achievements,
 }) => {
   return (
-    <View style={{ marginBottom: 6 }} wrap={false}>
-      <Text style={styles.title}>{role}</Text>
-      <View style={[styles.infoContainer, styles.row]}>
+    <View style={styles.container} wrap={false}>
+      <View style={styles.headerWrapper}>
+        <Text style={styles.title}>{role}</Text>
         <Text style={styles.company}>{company}</Text>
-        <IconText icon="calendar" text={timeframe} />
+        <View style={styles.timeLocRow}>
+          <Text style={styles.timeframe}>{timeframe}</Text>
+        </View>
       </View>
+
+      <Text style={styles.achievementsHead}>Achievements/Tasks</Text>
       <View style={styles.list}>
         {achievements.map((item, index) => (
           <View key={index} style={styles.listItem}>
-            <Icon name="dot" size={10} />
+            <View style={styles.bulletPoint} />
             <Text style={styles.listText}>{item}</Text>
           </View>
         ))}

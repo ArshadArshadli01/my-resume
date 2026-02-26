@@ -3,7 +3,8 @@
         "name": "Arshad Arshadli",
         "role": "Backend Developer",
         "email": "arshad.arshadli02@gmail.com",
-        "location": "",
+        "location": "Baku, Azerbaijan",
+        "phone": "+994 55 656 03 07",
         "avatar": "https://image2url.com/r2/default/images/1771953034029-e47f2a12-164b-4a92-bc0e-34731f45823a.jpg"
     },
     "social": [
@@ -22,7 +23,7 @@
     ],
     "intro": {
         "show": true,
-        "text": "Backend Developer with 5 years of software development experience, including 4+ years specializing in backend architecture. Proven expertise in building scalable RESTful microservices, optimizing databases, and integrating complex payment gateways. Proficient in Java/Spring Boot, Redis, Docker/Kubernetes, and Linux/VPS environments. Adaptable and detail-oriented professional driven to solve complex technical challenges."
+        "text": "Specializing in scalable microservices and database optimization. Expert in Java/Spring Boot, PHP/Laravel, Redis, and Docker/Kubernetes. Proven track record of integrating complex payment gateways and managing Linux/VPS environments."
     },
     "skills": {
         "show": true,

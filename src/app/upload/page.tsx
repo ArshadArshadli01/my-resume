@@ -439,6 +439,21 @@ const pageStyles = `
     color: var(--up-text);
   }
 
+  /* ── Light mode overrides ─────────────────────────────────── */
+  [data-theme="light"] .upload-page {
+    --up-bg: #f8fafc;
+    --up-surface: rgba(0,0,0,0.03);
+    --up-surface-hover: rgba(0,0,0,0.06);
+    --up-border: rgba(0,0,0,0.1);
+    --up-text: #1e293b;
+    --up-text-muted: #475569;
+    --up-text-dim: #94a3b8;
+    --up-accent: #7c3aed;
+    --up-accent-light: #6d28d9;
+    --up-accent-bg: rgba(124,58,237,0.08);
+    --up-accent-border: rgba(124,58,237,0.2);
+  }
+
 
 
   .up-heading {
@@ -804,5 +819,25 @@ const pageStyles = `
   .upload-page .filepond--item-panel {
     background: var(--up-accent) !important;
     border-radius: 8px !important;
+  }
+
+  /* ── Light mode FilePond + button overrides ─────────────── */
+  [data-theme="light"] .upload-page .filepond--drop-label {
+    color: var(--up-text-muted) !important;
+  }
+  [data-theme="light"] .upload-page .filepond--panel-root {
+    background: var(--up-surface) !important;
+    border-color: var(--up-border) !important;
+  }
+  [data-theme="light"] .up-btn-primary {
+    box-shadow: 0 4px 24px rgba(124,58,237,0.18);
+  }
+  [data-theme="light"] .up-btn-secondary {
+    color: var(--up-accent);
+  }
+  [data-theme="light"] .up-heading {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `;

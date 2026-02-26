@@ -10,6 +10,7 @@ const resumeData: ResumeData = {
     role: pdfJson.person.role,
     email: pdfJson.person.email,
     location: pdfJson.person.location,
+    phone: (pdfJson.person as any).phone,
     avatar: pdfJson.person.avatar
       ? pdfJson.person.avatar.startsWith("http")
         ? pdfJson.person.avatar

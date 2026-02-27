@@ -30,19 +30,23 @@
         "items": [
             {
                 "title": "Languages & Frameworks",
-                "description": "Java (SE/EE), Spring (Boot, Framework), Hibernate, JPA, PHP, Laravel."
+                "description": "Java SE/EE, Spring Boot (JSP/Thymeleaf), PHP (Laravel), JavaScript (Vue.js/Nuxt.js)."
             },
             {
-                "title": "Databases & Caching",
-                "description": "PostgreSQL, MySQL, Oracle, MongoDB, Redis, Liquibase, Flyway."
+                "title": "Databases & Storage",
+                "description": "PostgreSQL, MySQL, MS SQL, Oracle, MongoDB, Redis, JDBC (Hibernate/JPA), AWS S3, MinIO."
             },
             {
-                "title": "DevOps & Cloud",
-                "description": "Docker, Kubernetes, Linux, AWS S3, MinIO, VPS (DigitalOcean, Heroku)."
+                "title": "DevOps & Infrastructure",
+                "description": "Docker, Kubernetes, Linux, Heroku, VPS Management, CI/CD (GitLab/GitHub), HashiCorp Vault."
             },
             {
                 "title": "Architecture & Tools",
-                "description": "RESTful APIs, Microservices, OOP, SOLID, Git, Postman, Swagger, ELK Stack, Grafana, Vault."
+                "description": "Microservices, RESTful/SOAP APIs, Kafka, RabbitMQ, OOP, SOLID, Design Patterns, Liquibase, Flyway, ELK, Swagger."
+            },
+            {
+                "title": "Testing & Monitoring",
+                "description": "JUnit, Mockito, Postman, Microcks, Prometheus, Grafana."
             }
         ]
     },
